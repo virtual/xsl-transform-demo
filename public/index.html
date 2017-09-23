@@ -5,10 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>XSL</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
 </head>
 <body>
-  <h1>XSL Transform</h1>
-  <div id="container"></div>
+    <div class="ui red inverted menu">
+        <a class=" item">
+          XSL Transform
+        </a>
+        
+      </div>
+  <div class="ui container"> 
+      <h3 class="ui top attached header">
+      Input
+      </h3>
+      <div id="input" class="ui attached segment">
+        
+      </div>
+      <h3 class="ui attached header">
+        Output
+      </h3>
+      <div id="output" class="ui attached segment"> 
+      </div>
+      
+
+  </div>
   <script>
    
       function loadXMLDoc(filename) {
@@ -28,7 +48,7 @@
          xsltProcessor = new XSLTProcessor();
          xsltProcessor.importStylesheet(xsl);
          resultDocument = xsltProcessor.transformToFragment(xml, document);
-         document.getElementById('container').appendChild(resultDocument);
+         document.getElementById('output').appendChild(resultDocument);
       }
   </script>
 </body>
