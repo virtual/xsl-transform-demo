@@ -48,20 +48,28 @@ Disabling the include-content-type filter will remove an encoding meta tag place
 	<xsl:template match="tbody/tr"> 
 		<div class="ui middle aligned stackable grid container">
 			<div class="row">
+
 				<div class="eight wide column">
-					<h3 class="ui header">
+					<h3 class="ui dividing header">
 						<xsl:apply-templates select="td[@class = '_title']" /></h3>
-					<p class="caption">
+					<p>
 						<xsl:apply-templates select="td[@class = '_desc']" />
 					</p> 
 				</div>
 				<div class="six wide right floated column">
-					<xsl:apply-templates select="td[@class = '_photo']" />
+					
+<div class="ui left floated tiny image">
+  <a class="ui left yellow corner label" title="Save to Favorites">
+    <i class="star icon"></i>
+  </a> 
+</div>
+
+<xsl:apply-templates select="td[@class = '_photo']" />
 				</div>
 			</div> 
       <div class="row">
         <div class="center aligned column">
-          <a class="ui huge button">Learn more</a>
+          <a class="ui red button">Learn more</a>
         </div>
       </div>
 		</div>  

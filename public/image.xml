@@ -1,15 +1,15 @@
 <bodycode>
   <table class="ou-image-box ou-image-box-right">
-      <caption>Fancy item</caption>
+      <caption>Item List</caption>
       <tbody>
           <tr>
-              <td class="_photo"><img src="stock003.jpg" alt="West Campus" /></td>
-              <td class="_title">It's cake!</td>
-                 <td class="_desc">It's a very super long desc! It's a very super long desc! It's a very super long desc!</td>
+              <td class="_photo"><a href="http://satinflame.com"><img src="stock003.jpg" alt="Caramel Lava Cake" /></a></td>
+              <td class="_title">Caramel Lava Cake</td>
+                 <td class="_desc">With ingredients like pure cocoa, fancy sea salt, and caramel, this cake is sure to please any audience.</td>
           </tr>
           <tr>
-              <td class="_photo"><img src="stock004.jpg" alt="West Campus" /></td>
-              <td class="_title">John Doe</td><td class="_desc">Lorem ipsum dolor  </td>
+              <td class="_photo"><img src="stock004.jpg" alt="Glacier National Park" /></td>
+              <td class="_title">Explore the Outdoors</td><td class="_desc">Explore the outdoors in this inconsistent non-recipe link. </td>
           </tr>
       </tbody>
   </table>
