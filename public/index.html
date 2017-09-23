@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>XSL</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css" /> 
- <style>
+  <title>XSL Transformation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" /> 
+  <style>
     table { border: 1px solid #ccc;
     font-family: 'Courier New', Courier, monospace} 
-    table td, table th, caption { vertical-align: top; padding: 3px; border: 1px solid #ddd;}
+    table td, table th, caption { vertical-align: top; padding: 3px; border: 1px solid #ddd; border-collapse: collapse;}
     img,table { max-width:100%; height:auto;}
     td { width:25%;}
     ._desc { width:50%;} 
@@ -22,36 +20,31 @@
     margin: 0 !important;
     top: 0;
     padding-top: 0; 
-}
-.ui.left.floated.tiny, .ui.left.floated.tiny i { cursor:pointer;}
- </style>
+    }
+    .ui.left.floated.tiny, .ui.left.floated.tiny i { cursor:pointer;}
+  </style>
 </head>
 <body>
-    <div class="ui red inverted menu">
-        <a class="item">
-          XSL Transform
-        </a>
-        
-      </div>
-  <div class="ui container"> 
-      <h2 class="ui top attached header">
+  <div class="ui red inverted menu">
+    <a class="item">
+        XSL Transform
+      </a>
+  </div>
+  <div class="ui container">
+    <h2 class="ui top attached header">
       Input
-      </h2>
-      <div class="ui attached segment">
-          <div id="input">
-            </div>
+    </h2>
+    <div class="ui attached segment">
+      <div id="input">
       </div>
-      
-      <h2 class="ui attached header">
-        Output
-      </h2>
-      <div id="output" class="ui attached segment"> 
-      </div>
-      
-
+    </div>
+    <h2 class="ui attached header">
+      Output
+    </h2>
+    <div id="output" class="ui attached segment">
+    </div>
   </div>
   <script>
-   
       function loadXMLDoc(filename) {
          if (window.ActiveXObject) {
               xhttp = new ActiveXObject("Msxml2.XMLHTTP");
@@ -73,23 +66,16 @@
       }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
   <script>
     function htmlencode(str) {
-    return str.replace(/[&<>"']/g, function($0) {
-        return "&" + {"&":"amp", "<":"lt", ">":"gt", '"':"quot", "'":"#39"}[$0] + ";";
+      return str.replace(/[&<>"']/g, function($0) {
+          return "&" + {"&":"amp", "<":"lt", ">":"gt", '"':"quot", "'":"#39"}[$0] + ";";
+      });
+    }
+
+    $(document).ready(function(){
+      $('#input').load('image.xml');
     });
-}
-
-  $(document).ready(function(){
-  
-  $('#input').load('image.xml');
-  //$('#input').innerHTML = htmlencode($('#input'));
-  
-
-  
-});
   </script>
 </body>
 </html>
