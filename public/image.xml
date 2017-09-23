@@ -1,11 +1,11 @@
 <bodycode>
   <table class="ou-image-box ou-image-box-right">
-      <caption>Photo (Float Right)</caption>
+      <caption>Fancy item</caption>
       <tbody>
           <tr>
               <td class="_photo"><img src="stock003.jpg" alt="West Campus" /></td>
-              <td class="_title">John Doe</td>
-                 <td class="_desc">Lorem ipsum dolor  </td>
+              <td class="_title">It's cake!</td>
+                 <td class="_desc">It's a very super long desc! It's a very super long desc! It's a very super long desc!</td>
           </tr>
           <tr>
               <td class="_photo"><img src="stock004.jpg" alt="West Campus" /></td>

@@ -59,7 +59,13 @@ Disabling the include-content-type filter will remove an encoding meta tag place
 					<xsl:apply-templates select="td[@class = '_photo']" />
 				</div>
 			</div> 
+      <div class="row">
+        <div class="center aligned column">
+          <a class="ui huge button">Learn more</a>
+        </div>
+      </div>
 		</div>  
+    
 	</xsl:template>	
 
 	<xsl:template match="td[@class = '_photo']">

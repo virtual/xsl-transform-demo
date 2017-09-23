@@ -9,9 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css" /> 
  <style>
-    table { border: 1px solid #ccc;} 
-    table td, table th, caption { padding: 3px; border: 1px solid #ddd;}
-    img { max-width:100%; height:auto;}
+    table { border: 1px solid #ccc;
+    font-family: 'Courier New', Courier, monospace} 
+    table td, table th, caption { vertical-align: top; padding: 3px; border: 1px solid #ddd;}
+    img,table { max-width:100%; height:auto;}
+    td { width:25%;}
+    ._desc { width:50%;} 
  </style>
 </head>
 <body>
@@ -26,8 +29,8 @@
       Input
       </h3>
       <div class="ui attached segment">
-          <pre id="input">
-            </pre>
+          <div id="input">
+            </div>
       </div>
       
       <h3 class="ui attached header">
