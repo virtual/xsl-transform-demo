@@ -1,3 +1,5 @@
+<bodycode>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quia repudiandae ut nisi fugiat officia, labore quo necessitatibus, ipsam numquam asperiores doloribus? Facere in ex non hic. Vel, architecto dolor!</p>
 <table class="ou-image-box ou-image-box-right">
     <caption style="background-color: #ddd; text-align: center;">Photo (Float Right)</caption>
     <tbody>
@@ -9,3 +11,5 @@
         </tr>
     </tbody>
 </table>
+
+</bodycode>

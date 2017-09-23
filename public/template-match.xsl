@@ -33,8 +33,10 @@ Version determines the version of HTML to use. The XSL will automatically put th
 Indent helps make the output look pretty.
 Disabling the include-content-type filter will remove an encoding meta tag placed in the head of the HTML by XSL. The best practice is to define that meta node manually. -->
 	<xsl:output method="html" version="5.0" indent="yes" encoding="UTF-8" include-content-type="no" /> 
-
-
+ <xsl:template match="/document">
+ 	<xsl:apply-templates select="bodycode/node()" />
+			
+ </xsl:template>
 
 	<!-- image box -->
 	<xsl:template match="table">
