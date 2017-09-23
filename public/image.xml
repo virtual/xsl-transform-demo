@@ -1,15 +1,16 @@
 <bodycode>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quia repudiandae ut nisi fugiat officia, labore quo necessitatibus, ipsam numquam asperiores doloribus? Facere in ex non hic. Vel, architecto dolor!</p>
-<table class="ou-image-box ou-image-box-right">
-    <caption style="background-color: #ddd; text-align: center;">Photo (Float Right)</caption>
-    <tbody>
-        <tr>
-            <td class="_photo"><img src="stock003.jpg" alt="West Campus" /></td>
-        </tr>
-        <tr>
-            <td class="_title">JohnDoe</td>
-        </tr>
-    </tbody>
-</table>
-
+  <table class="ou-image-box ou-image-box-right">
+      <caption>Photo (Float Right)</caption>
+      <tbody>
+          <tr>
+              <td class="_photo"><img src="stock003.jpg" alt="West Campus" /></td>
+              <td class="_title">John Doe</td>
+                 <td class="_desc">Lorem ipsum dolor  </td>
+          </tr>
+          <tr>
+              <td class="_photo"><img src="stock004.jpg" alt="West Campus" /></td>
+              <td class="_title">John Doe</td><td class="_desc">Lorem ipsum dolor  </td>
+          </tr>
+      </tbody>
+  </table>
 </bodycode>

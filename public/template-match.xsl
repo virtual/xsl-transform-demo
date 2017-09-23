@@ -33,34 +33,36 @@ Version determines the version of HTML to use. The XSL will automatically put th
 Indent helps make the output look pretty.
 Disabling the include-content-type filter will remove an encoding meta tag placed in the head of the HTML by XSL. The best practice is to define that meta node manually. -->
 	<xsl:output method="html" version="5.0" indent="yes" encoding="UTF-8" include-content-type="no" /> 
- <xsl:template match="/document">
- 	<xsl:apply-templates select="bodycode/node()" />
-			
- </xsl:template>
+	<xsl:template match="/document">
+		<xsl:apply-templates select="bodycode/node()" />
+
+	</xsl:template>
 
 	<!-- image box -->
 	<xsl:template match="table">
 		<div class="image-box image-box-right">  
-			<!-- <xsl:apply-templates select="td[@class = '_photo']" /> -->
-			<!-- <xsl:apply-templates select="td" /> -->
-      <xsl:apply-templates select="tbody/tr" />
-			<!-- <xsl:if test="normalize-space(td[@class = '_title']) != '' and normalize-space(td[@class = '_title']) != ' ' and normalize-space(td[@class = '_title']) != '&nbsp;'">
-				<p class="caption"><xsl:apply-templates select="normalize-space(td[@class = '_title'])"><xsl:copy-of select="*"/></xsl:apply-templates></p>
-			</xsl:if> -->
+			<xsl:apply-templates select="tbody/tr" />
 		</div>
 	</xsl:template>
 
- <xsl:template match="td">
-    <xsl:text>TD!!</xsl:text>
-		<xsl:copy-of select="*"/>
-	</xsl:template>  
-
-  	<xsl:template match="tbody/tr">
-    <xsl:text>===tr===</xsl:text>
-			<xsl:apply-templates select="td" />
-			<!-- <xsl:if test="normalize-space(td[@class = '_title']) != '' and normalize-space(td[@class = '_title']) != ' ' and normalize-space(td[@class = '_title']) != '&nbsp;'">
-				<p class="caption"><xsl:apply-templates select="normalize-space(td[@class = '_title'])" /></p>
-			</xsl:if> -->
+	<xsl:template match="tbody/tr"> 
+		<div class="ui middle aligned stackable grid container">
+			<div class="row">
+				<div class="eight wide column">
+					<h3 class="ui header">
+						<xsl:apply-templates select="td[@class = '_title']" /></h3>
+					<p class="caption">
+						<xsl:apply-templates select="td[@class = '_desc']" />
+					</p> 
+				</div>
+				<div class="six wide right floated column">
+					<xsl:apply-templates select="td[@class = '_photo']" />
+				</div>
+			</div> 
+		</div>  
 	</xsl:template>	
 
+	<xsl:template match="td[@class = '_photo']">
+		<xsl:copy-of select="*"/>
+	</xsl:template>   
 </xsl:stylesheet>
