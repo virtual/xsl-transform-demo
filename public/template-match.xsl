@@ -26,26 +26,39 @@ This template ensures that all content is copied, or applied to any existing tem
 
 	<!--	xsl:strip-space ensures that the content coming from the XML is clean. It will remove unnecessary whitespace between elements. -->	
 	<xsl:strip-space elements="*" />
-	
+
 	<!--	The xsl:output tells the XSL what kind of document the XML is being transformed into. 
-	There are four commonly used methods: html, xhtml, xml, and text. For most HTML implementations (especially with HTML 5 being commonly used), the best practice is to use the "html" output method.
-	Version determines the version of HTML to use. The XSL will automatically put the DOCTYPE for the HTML version 5.0.
-	Indent helps make the output look pretty.
-	Disabling the include-content-type filter will remove an encoding meta tag placed in the head of the HTML by XSL. The best practice is to define that meta node manually. -->
+There are four commonly used methods: html, xhtml, xml, and text. For most HTML implementations (especially with HTML 5 being commonly used), the best practice is to use the "html" output method.
+Version determines the version of HTML to use. The XSL will automatically put the DOCTYPE for the HTML version 5.0.
+Indent helps make the output look pretty.
+Disabling the include-content-type filter will remove an encoding meta tag placed in the head of the HTML by XSL. The best practice is to define that meta node manually. -->
 	<xsl:output method="html" version="5.0" indent="yes" encoding="UTF-8" include-content-type="no" /> 
 
- 
+
 
 	<!-- image box -->
-	<xsl:template match="table" >
-		<div class="image-box image-box-right"> output!!
-			<xsl:apply-templates select="td[@class = '_photo']" />
-			<xsl:if test="normalize-space(td[@class = '_title']) != '' and normalize-space(td[@class = '_title']) != ' ' and normalize-space(td[@class = '_title']) != '&nbsp;'">
+	<xsl:template match="table">
+		<div class="image-box image-box-right">  
+			<!-- <xsl:apply-templates select="td[@class = '_photo']" /> -->
+			<!-- <xsl:apply-templates select="td" /> -->
+      <xsl:apply-templates select="tbody/tr" />
+			<!-- <xsl:if test="normalize-space(td[@class = '_title']) != '' and normalize-space(td[@class = '_title']) != ' ' and normalize-space(td[@class = '_title']) != '&nbsp;'">
 				<p class="caption"><xsl:apply-templates select="normalize-space(td[@class = '_title'])"><xsl:copy-of select="*"/></xsl:apply-templates></p>
-			</xsl:if>
-      	</div>
+			</xsl:if> -->
+		</div>
 	</xsl:template>
- 
- 
+
+ <xsl:template match="td">
+    <xsl:text>TD!!</xsl:text>
+		<xsl:copy-of select="*"/>
+	</xsl:template>  
+
+  	<xsl:template match="tbody/tr">
+    <xsl:text>===tr===</xsl:text>
+			<xsl:apply-templates select="td" />
+			<!-- <xsl:if test="normalize-space(td[@class = '_title']) != '' and normalize-space(td[@class = '_title']) != ' ' and normalize-space(td[@class = '_title']) != '&nbsp;'">
+				<p class="caption"><xsl:apply-templates select="normalize-space(td[@class = '_title'])" /></p>
+			</xsl:if> -->
+	</xsl:template>	
 
 </xsl:stylesheet>
