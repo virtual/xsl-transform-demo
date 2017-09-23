@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>XSL</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
+  <style>
+    table { border: 1px solid #ccc;} 
+    table td, table th, caption { padding: 3px; border: 1px solid #ddd;}
+  </style>
 </head>
 <body>
     <div class="ui red inverted menu">
@@ -18,9 +22,11 @@
       <h3 class="ui top attached header">
       Input
       </h3>
-      <div id="input" class="ui attached segment">
-        
+      <div class="ui attached segment">
+          <pre id="input">
+            </pre>
       </div>
+      
       <h3 class="ui attached header">
         Output
       </h3>
@@ -51,5 +57,23 @@
          document.getElementById('output').appendChild(resultDocument);
       }
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    function htmlencode(str) {
+    return str.replace(/[&<>"']/g, function($0) {
+        return "&" + {"&":"amp", "<":"lt", ">":"gt", '"':"quot", "'":"#39"}[$0] + ";";
+    });
+}
+
+  $(document).ready(function(){
+  
+  $('#input').load('image.xml');
+  //$('#input').innerHTML = htmlencode($('#input'));
+  
+
+  
+});
+</script>
+  
 </body>
 </html>
