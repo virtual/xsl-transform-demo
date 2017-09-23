@@ -1,0 +1,11 @@
+<table class="ou-image-box ou-image-box-right">
+    <caption style="background-color: #ddd; text-align: center;">Photo (Float Right)</caption>
+    <tbody>
+        <tr>
+            <td class="_photo"><img src="{{f:6845187}}" alt="West Campus" /></td>
+        </tr>
+        <tr>
+            <td class="_title">JohnDoe</td>
+        </tr>
+    </tbody>
+</table>

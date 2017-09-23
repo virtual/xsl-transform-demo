@@ -1,0 +1,17 @@
+{
+  "name": "xsl-demo",
+  "version": "1.0.0",
+  "description": "A demo on using XSL and transformations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

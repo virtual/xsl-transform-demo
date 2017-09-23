@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>XSL</title>
+</head>
+<body>
+  <h1>XSL Transform</h1>
+  <div id="container"></div>
+  <script>
+   
+      function loadXMLDoc(filename) {
+         if (window.ActiveXObject) {
+              xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+         } else {
+              xhttp = new XMLHttpRequest();
+         }
+         xhttp.open("GET", filename, false);
+         xhttp.send("");
+         return xhttp.responseXML;
+      }
+ 
+      xml = loadXMLDoc("image.xml");
+      xsl = loadXMLDoc("template-match.xsl");
+      if (document.implementation && document.implementation.createDocument) {
+         xsltProcessor = new XSLTProcessor();
+         xsltProcessor.importStylesheet(xsl);
+         resultDocument = xsltProcessor.transformToFragment(xml, document);
+         document.getElementById('container').appendChild(resultDocument);
+      }
+  </script>
+</body>
+</html>
